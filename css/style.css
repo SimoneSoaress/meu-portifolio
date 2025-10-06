@@ -1,19 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Clicker+Script&family=Poppins:wght@200;300;400;500;600;700&display=swap');
 
-:root
+:root 
 {
-    --bg-black-900:#f2f2fc;
-    --bg-black-100:#fdf9ff;
-    --bg-black-50:#e8dfec;
-    --text-black-900: #302e4d;
-    --text-black-700: #504e70;
+    --bg-black-900:#f2f2fc; /* cor de fundo principal */
+    --bg-black-100:#fdf9ff;  /* cor da barra lateral */
+    --bg-black-50:#e8dfec; /* cor de fundo secundaria */
+    --text-black-900: #302e4d; /* cor do texto principal */
+    --text-black-700: #504e70; /* cor do texto secundario */
 }
 
-body
+body 
 {
-    line-height: 1.5;
+    line-height: 1.5; 
     font-size: 16px;
-    font-family: "Poppins", sans-serif;
+    font-family: "Poppins", sans-serif; /* fonte do site */
 }
 *
 {
@@ -24,14 +24,14 @@ body
     box-sizing: border-box;
 }
 
-::before, ::after
+::before, ::after /* pseudo elements */
 {
     box-sizing: border-box;
 }
 
-ul
+ul /* listas */
 {
-    list-style: none;
+    list-style: none; /* remove os pontos das listas */
 }
 
 /* icons */
@@ -66,16 +66,16 @@ ul
     margin-right: 5px;
 }
 
-.home-icon
+.home-icon /* icone home */
 {
     width: 20px;
     height: 20px;
-    vertical-align: middle;
-    margin-right: 5px;
+    vertical-align: middle; /* alinha o icone com o texto */
+    margin-right: 5px; /* espaçamento entre o icone e o texto */
 }
 
 /* section (aside,home) */
-.section
+.section /* conteudo principal */
 {
     background: var(--bg-black-900);
     min-height: 100vh;
@@ -90,42 +90,149 @@ ul
 }
 
 /* aside */
-.aside
+.aside /* barra lateral esquerda */
 {
-    width: 270px;
-    background: var(--bg-black-100);
+    width: 270px; /* largura da barra lateral */
+    background: var(--bg-black-100); 
     position: fixed;
     left: 0;
     top: 0;
     padding: 30px;
     height: 100%;
+    border-right: 1px solid var(--bg-black-50); /* linha de separaçao entre a barra lateral e a barra conteudo */
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 10;
 }
 
-.aside .logo
+.aside .logo /* logo na barra lateral */
 {
-    position: absolute;
-    top: 50px;
+    position: absolute; 
+    top: 50px; 
     font-size: 30px;
-    text-transform: capitalize;    
+    text-transform: capitalize; /* primeira letra maiuscula */
 }
 
-.aside .logo a
+.aside .logo a /* link que envolve a logo */
 {
-    color: var(--text-black-900);
-    font-weight: 700;
-     /*background: red;*/
-    padding: 15px 20px;
-    font-size: 30px;
-    letter-spacing: 5px;
+    color: var(--text-black-900); /* cor da logo */
+    font-weight: 700; /* negrito */
+    padding: 15px 20px; /* espaçamento da logo */
+    font-size: 30px; /* tamanho da fonte */
+    letter-spacing: 6px; /* espaçamento entre as letras */
+    position: relative; /* posiçao relativa para os riscos embaixo da logo */
+}
+
+.aside .logo a span /* parte colorida da logo */
+{
+    font-family: "Clicker Script", cursive; /* fonte da logo */
+    font-family: 40px; /* tamanho da fonte */
+}
+
+/* dois riscos vermelhos embaixo da logo(left)*/
+.aside .logo a::before 
+{
+    content: ''; /* conteudo vazio */
+    position: absolute; 
+    width: 20px; 
+    height: 20px;
+    border-bottom: 5px solid var(--skin-color);
+    border-left: 5px solid var(--skin-color);
+    bottom: 0;
+    left: 0;
+}
+
+/* dois riscos vermelhos embaixo da logo(right)*/
+.aside .logo a::after
+{
+    content: '';
+    position: absolute; /* posiçao absoluta em relaçao a logo*/
+    width: 20px; /* largura do risco */
+    height: 20px; /* altura do risco */
+    border-top: 5px solid var(--skin-color); /* cor do risco de cima*/
+    border-right: 5px solid var(--skin-color);  /* cor do risco da direita */
+    top: 0;
+    right: 0;
+}
+
+.aside .nav-toggler /* icone de menu (3 tracinhos) */
+{
+   height: 40px;
+   width: 45px;
+   border: 1px solid var(--bg-black-50); /* borda do icone */
+   cursor: pointer; /*tipo de cursor */
+   position: fixed;
+   left: 300px;
+   top: 20px;
+   border-radius: 5px; /* bordas arredondadas */
+   background: var(--bg-black-100);
+   display: none;
+   align-items: center;
+   justify-content: center;
+}
+
+.aside .nav-toggler span /* os 3 tracinhos do icone */
+{
+    height: 3px; /* altura dos tracinhos */
+    width: 18px; /* largura dos tracinhos */
+    background: var(--skin-color); /* cor (tema) dos tracinhos */
+    display: inline-block;
     position: relative;
 }
 
-.aside .logo a span
+.aside .nav-toggler span::before /* tracinho de cima */
 {
-    font-family: "Clicker Script", cursive;
-    font-family: 40px;
+    content: '';
+    height: 3px; /* altura do tracinho */
+    width: 18px; /* largura do tracinho */
+    background: var(--skin-color);
+    position: absolute; /* posiçao absoluta em relaçao ao tracinho do meio */
+    top: -6px; /* posiçao do tracinho em relaçao ao tracinho do meio */
+    left: 0; 
+}
+
+.aside .nav-toggler span::after /* tracinho debaixo */
+{
+    content: '';
+    height: 3px; /* altura do tracinho */
+    width: 18px; /* largura do tracinho */
+    background: var(--skin-color);
+    position: absolute; /* posiçao absoluta em relaçao ao tracinho do meio */
+    top: 6px; /* posiçao do tracinho em relaçao ao tracinho do meio */
+    right: 0; 
+}
+
+/* margin do topo até os icones */
+.aside .nav
+{
+    margin-top: 50px    ;
+}
+
+/* margin entre os icones (lista(li))*/
+.aside .nav li
+{
+    margin-bottom: 25px; 
+   /* background: red;  faz a area do link */
+    display: block; 
+}
+
+.aside .nav li a /* link que envolve o icone e o texto */
+{
+    font-size: 16px; /* tamanho da fonte */
+    font-weight: 600; /* deixa o texto mais negrito */
+    display: block; /* faz o link ocupar toda a area do li */
+    border-bottom: 2px solid var(--bg-black-50); /* linha embaixo do link */
+    color: var(--text-black-900); /* cor do texto */
+    padding: 10px 18px; /* espaçamento do link */
+}
+
+.aside .nav li a.active /* o link da página que a pessoa está visitando agora fica na cor(tema) */
+{
+    color: var(--skin-color); /* cor tema do site */
+}
+
+.aside .nav li a i /* Para cada ícone (i representa um ícone)*/
+{
+    margin-right: 15px; /* espaçamento entre o icone e o texto */
 }
