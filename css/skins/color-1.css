@@ -1,5 +1,11 @@
 :root
 {
     --skin-color: #ec1839;
+    --name-color: #e61ec1;
     
+    --first-color: hsl(var(--hue), 60%, 40%);
+    --border-color: hsl(var(--segund-hue), 4%, 16%);
+    --white-color: hsl(var(--segund-hue), 0%, 100%);
+    --shadow-color: hsl(var(--segund-hue), 80%, 12%);
+    --transition-cv: cubic-bezier(0.3, 0, 0.3, 1);
 }

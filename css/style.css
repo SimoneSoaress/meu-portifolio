@@ -1,4 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Clicker+Script&family=Poppins:wght@200;300;400;500;600;700&display=swap');
+@font-face {
+    font-family: 'Cadillac';
+    src: url(/css/fonts/CadillacPersonalUseItalic-K7pny.ttf);
+}
+
 
 :root 
 {
@@ -80,13 +85,78 @@ ul /* listas */
     background: var(--bg-black-900);
     min-height: 100vh;
     display: block;
-    position: fixed;
-    left: 270px;
-    top: 0;
-    right: 0;
-    z-index: 0;
+    padding: 0 30px;   
     opacity: 1;
+}
 
+.padd-15 /*faz o espaçamento dos lados */
+{
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+
+.container /* container geral */
+{
+    max-width: 1100px; /* largura maxima do conteudo */
+    width: 100%; /* largura do conteudo */
+    margin: auto; /* centraliza o conteudo */
+}
+
+.row /* faz o conteudo ficar em linha */
+{
+    display: flex;
+    flex-wrap: wrap; /* faz o conteudo quebrar a linha quando necessario */
+    margin-left: -15px;
+    margin-right: -15px;
+    position: relative;     
+}
+
+.btn-cv-me /* mexe no botão download cv */
+{
+    font-size: 16px;
+    font-weight: 500;
+    margin-left: 30px; /* Adiciona um espaço de #px à esquerda do botão */
+    padding: 12px 35px;
+    color: white;
+    border-radius: 50px;
+    display: inline-block; /* faz o botão ter a largura do conteudo */
+    white-space: nowrap; /* impede que o texto quebre de linha */
+    border: #e6e6e6 2px solid; /* borda do botão */
+    background: var(--skin-color);
+    transition: all 0.6s ease;
+    
+}
+
+.btn-cv-me:hover /* mexe no botão quando o mouse passar por cima */
+{
+    transform: scale(1.25);
+    box-shadow: 0 14px 12px rgba(236, 24, 57, 0.3);
+    background: var(--name-color);   
+}
+
+
+.btn-hire-me /* mexe no botão hire me */
+{
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: 25px;
+    margin-left: 50px; /* Adiciona um espaço de 25px à esquerda do botão */
+    padding: 12px 35px;
+    color: white;
+    border-radius: 50px;
+    display: inline-block; /* faz o botão ter a largura do conteudo */
+    white-space: nowrap; /* impede que o texto quebre de linha */
+    border: #e6e6e6 2px solid; /* borda do botão */
+    background: var(--skin-color);
+    transition: all 0.7s ease;
+}
+
+.btn-hire-me:hover /* mexe no botão quando o mouse passar por cima */
+{
+    transform: scale(1.25);
+    box-shadow: 0 14px 12px rgba(236, 24, 57, 0.3);
+    background: var(--name-color);
 }
 
 /* aside */
@@ -127,7 +197,7 @@ ul /* listas */
 .aside .logo a span /* parte colorida da logo */
 {
     font-family: "Clicker Script", cursive; /* fonte da logo */
-    font-family: 40px; /* tamanho da fonte */
+    font-size: 40px;
 }
 
 /* dois riscos vermelhos embaixo da logo(left)*/
@@ -206,7 +276,7 @@ ul /* listas */
 /* margin do topo até os icones */
 .aside .nav
 {
-    margin-top: 50px    ;
+    margin-top: 50px;
 }
 
 /* margin entre os icones (lista(li))*/
@@ -235,4 +305,91 @@ ul /* listas */
 .aside .nav li a i /* Para cada ícone (i representa um ícone)*/
 {
     margin-right: 15px; /* espaçamento entre o icone e o texto */
+}
+
+/* home */
+.home
+{
+    min-height: 100vh; /* faz a seção home ter no minimo a altura da tela que foi definida */
+    display: flex;
+    color: var(--text-black-900);
+}
+
+.home .home-info /*mexe com o conteudo (texto)*/
+{
+    flex: 0 0 60%; /* faz o conteudo ocupar 60% da tela */
+    max-width: 60%; /* faz o conteudo ocupar no maximo 60% da tela */
+}
+
+h3.hello
+{
+    font-size: 28px;
+    margin: 15px 0;
+}
+
+h3.hello span /* mexe na parte colorida do texto (Name)*/
+{
+    font-family: 'Clicker Script', cursive;
+    font-size: 35px;
+    font-weight: 600; /*deixa o texto mais negrito */
+    color: var(--name-color);
+    letter-spacing: 1px;
+}
+
+.h3.my-profession /* mexe no texto "Sou" */
+{
+    font-size: 30px;
+    margin: 15px 0;
+}
+
+.typing /* mexe na parte (estudante de...) */
+{
+    color: var(--skin-color);
+}
+
+.home-info p /* mexe no (p) paragrafo(descrição) */
+{
+    margin-bottom: 70px;
+    font-size: 20px;
+    color: var(--text-black-700);
+}
+
+.home .home-img /* mexe na div que envolve a imagem */
+{
+    flex: 0 0 40%; /* faz a imagem ocupar 40% da tela */
+    max-width: 40%; /* joga a imagem para o lado direito */
+    text-align: center;
+    position: relative;
+    
+;
+}
+
+.home-img::after /* circulo em volta da imagem */
+{
+    content: '';
+    position: absolute;
+    height: 80px;
+    width: 85px;
+    border-bottom: 10px solid var(--skin-color);
+    border-right: 10px solid var(--skin-color);
+    right: 40px;
+    bottom: 10px;
+}
+
+.home-img::before /* circulo em volta da imagem */
+{
+    content: '';
+    position: absolute;
+    height: 80px;
+    width: 85px;
+    border-top: 10px solid var(--skin-color);
+    border-left: 10px solid var(--skin-color);
+    left: 40px;
+    top: -50px;
+}
+
+
+.home .home-img img /* mexe na imagem */
+{
+    height: 400px;
 }
